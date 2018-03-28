@@ -143,6 +143,11 @@
     #sentiment_all {
       background-image: url(figures/sentiment_all_cm.png); 
     }
+span.blank {
+  display: inline-block;
+  width: 150px;
+  border-bottom: 1px solid black;
+}
     /* Chrome, Safari */
     ::-webkit-scrollbar {
     width: 15px;
@@ -207,9 +212,9 @@ class: middle
 ---
 class: middle
 
-# _An Example of Research Design_:
+# An Example of Research Design:
 
-# Research Question
+## Research Question
 
 - ### Can machine learning predict the presumed gender of the book's author?
 
@@ -228,9 +233,10 @@ class: middle
 ---
 class: middle
 
-# _An Example of Research Design_:
+# An Example of Research Design:
 
-# Corpus Development
+## Corpus Development
+
 <br/>
 
 - ### <em>The New York Times Book Review</em>
@@ -254,9 +260,9 @@ class: middle
 ---
 class: middle
 
-# _An Example of Research Design_:
+# An Example of Research Design:
 
-# Methods
+## Methods
 
 - ### Computational Text Processing
  
@@ -302,31 +308,124 @@ class: middle
 ---
 class: middle
 
-# Activity: TF-IDF with book reviews
+# Activity: 
 
-### The Github repo folder labelled "keywords" has 10 csv files in it. Each file is a list of the top 20 TF-IDF scores for a book review. Each review has the term _garden_ in that top 20 list, but the other items on the list vary greatly. In small groups (3-4 people) look at the data files and formulate a hypothesis about any patterns or trends that seem apparent. Try generating your own question that TF-IDF lists could help you explore. 
+## TF-IDF with book reviews
 
-### If you have time, take a look at the original book reviews. They are in the 'pdfs' folder, and each pdf filename matches a filename from the "keywords" folder.
+<br/>
 
+#### The Github repo folder labelled "keywords" has 10 csv files in it. Each file is a list of the top 20 TF-IDF scores for a book review. Each review has the term _garden_ in that top 20 list, but the other items on the list vary greatly. In small groups (3-4 people) look at the data files and formulate a hypothesis about any patterns or trends that seem apparent. Try generating your own question that TF-IDF lists could help you explore. 
+
+<br/>
+
+#### If you have time, take a look at the original book reviews. They are in the 'pdfs' folder, and each pdf filename matches a filename from the "keywords" folder.
 
 ---
 class: middle
 
-# Works Cited
+# Common computations in large scale text analysis
 
-- #### Bourdieu, Pierre. <em>The Field of Cultural Production: Essays on Art and Literature.</em> Translated by Randal Johnson. New York: Columbia UP, 1993.
+- #### TF-IDF
+- #### Keyword extraction and/or algorithmic summarization
+- #### Latent Semantic Analysis, Latent Dirichlet Allocation (topic modelling)
+- #### Various other clustering and factorization algorithms
+- #### Word embeddings (word2vec)
+- #### Correlation and collocation analysis
+- #### Entity recognition or extraction (often combined with other techniques)
+- #### n-gram analysis (often combined with other techniques)
+- #### Supervised learning approaches 
+- #### Network analysis approaches
 
-- #### Bourdieu, Pierre. <em>The Rules of Art: Genesis and Structure of the Literary Field.</em> Translated by Susan Emanuel. Palo Alto: Stanford UP, 1996.
+See Mehdi Allahyari et al., "Text Summarization Techniques: A Brief Survey," arXiv:1707.02268 [cs], July 7, 2017, http://arxiv.org/abs/1707.02268.
 
-- #### Hochman, Barbara. <em>Getting at the Author: Reimagining Books and Reading in the Age of American Realism.</em> Amherst: U of Massachusetts P, 2009.
+---
+class: middle
 
-- #### Radway, Janice A. <em>A Feeling for Books: The Book-Of-The-Month Club, Literary Taste, and Middle-Class Desire</em>. Chapel Hill: U of North Carolina P, 1999.
+# Key Concepts in Research Design
 
-- #### Rubin, Joan Shelley. <em>The Making of Middlebrow Culture</em>em>. Chapel Hill: U of North Carolina P, 1992.
+- ### Qualitative, quantitative, hermeneutic, mixed 
+- ### Nomothetic and Idiographic Practices
+- ### Independent and dependent variables
+- ### Correlation vs. causality
+- ### Comparison and significant difference
+- ### Sampling and representativeness
+- ### Algorithmic fluency
+
+---
+class: middle
+
+# Activity: 
+
+## Connect this information to your scholarship
+
+#### Wayne C. Booth's _The Craft of Research_ describes the importance of looking ahead when forming your research questions "to consider how your work might strike others" (45). Looking at what I've said so far about research design for large scale text analysis, how might this kind of inquiry connect to an existing theory or "so what" question from your field or specialty? What are the significant questions that a large scale archive of texts might inform? 
+
+1. Identify a major concern of your discipline (some fields will have more direct connections to text analysis than others)
+2. If a direct connection isn’t obvious, try formulating one like this:
+  To do a comparable study in my field, I would want a corpus of <span class="blank"></span> and I would want to look closely at <span class="blank"></span>
+
+Working independently, write down a few thoughts and, after about 5-7 minutes, we will share our observations. 
+
+???
+Discuss generating a research question or problem
+Discuss structuring a qualitative or quantitative way of addressing the question or problem
+
+---
+class: middle
+
+# Mistakes and Areas of Concern in Research Design 
+
+- ### Poorly defined research problem 
+- ### Lack of theoretical framework 
+- ### Unclear contribution to the field 
+- ### Poor methodological approach (includes selection bias in corpus development)
+- ### Failure to acknowledge limitations of the study
+
+### See also http://libguides.usc.edu/writingguide/purpose 
+
+---
+class: middle
+
+# Activity: 
+
+## Search for Corpora
+
+#### Revisit the question related to your field or your interests that we generated in the last discussion. Bearing in mind how you think you want to analyze or measure texts, try to locate an appropriate text-based dataset or corpus. If you can't find a dataset/corpus that would allow you to investigate your topic, try to find a suitable dataset that's similar to your topic in some way, or see how close you can get to your topic. Alternatively, try to find digitized texts or web-based materials out of which a dataset/corpus for your topic could be built.
+
+## Search Tips
+
+- #### Many datasets are publicly available and can be found with a simple Google search (e,g, "Amazon product reviews dataset"). 
+- #### You can also search around for large dataset sharing or indexing platforms like datahub.io, figshare.com, humanitiesdata.com, kaggle.com, zenodo.org. 
+- #### Finally, pubished articles will often announce a new corpus or dataset, so keyword searches on pitcatt+, Google scholar, and arxiv.org can be helpful. 
 
 
+???
 
+Discuss operationalizing your method computationally
 
+---
+class: middle
+
+# Next Steps
+
+- #### Look for articles like Mehdi Allahyari et al., "Text Summarization Techniques: A Brief Survey" to get a sense of the approaches scholars are most excited about.
+
+- #### Look for implementations of algorithms in your programming language of choice (e.g. Python), or as interactive software like MALLET and antconc
+
+- #### Learn more about algorithms by learning how to code them
+
+---
+class: middle
+
+# Next Steps
+
+- #### Consider getting books like:
+ - #### Wayne C. Booth's _The Craft of Research_ (general source on academic research) 
+ - #### Ignatow and Mihalcea's _An Introduction to Text Mining: Research Design, Data Collection, and Analysis_ 
+ - #### Jesse Lawson's _Data Science in Higher Education: A Step-by-Step Introduction to Machine Learning for Institutional Researchers_
+ - #### Konrad H. Jarausch's _Quantitative Methods for Historians: A Guide to Research, Data, and Statistics_ 
+
+- #### Consider taking my fall graduate class, "Digital Humanities Approaches to Textual Objects"?
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
