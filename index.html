@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Design for Large Scale Text Analysis
+</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <style>
+
+    th {color: white; background-color: black; padding-top: 7px; padding-bottom: 7px;}
+    td {padding: 3px; }
+    table { width: 100%; border-collapse: collapse;}
+    table.dataframe { 
+      width: 80%;
+      margin-left: 50px;
+      margin-top: 25px; 
+    }
+    table.dataframe>thead>tr>th {
+      border-color: black; 
+      background: linear-gradient(#1B1B1B, black); 
+    }
+    table.term-groups {
+      margin-top: 25px; 
+      margin-bottom: 25px; 
+    }
+    table.term-groups>tbody>tr>th {
+      border-color: black;
+      background: linear-gradient(#1B1B1B, black); 
+      text-align: left;
+      padding: 6px;
+      width: 25%;
+    }
+
+    table.term-groups>tbody>tr>td {
+      border-color: black;
+      text-align: left;
+      padding: 6px;
+    } 
+
+    td, th {border: 1px solid black; font-size: 95%; text-align: center;
+    }
+    body {
+      font-family: 'Helvetica Neue', 'Arial', 'sans-serif';
+      color: rgba(34,34,34,.77);
+
+    }
+    
+    h1 {
+      font-family: 'Helvetica Neue', 'Arial', 'sans-serif';
+      font-weight: normal;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      color: black;
+      font-variant: small-caps;
+    }
+    h2 {
+      font-family: 'Helvetica Neue', 'Arial', 'sans-serif';
+      font-weight: normal;
+      color: black;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    h3, h4 {
+      
+      color: rgba(34,34,34,.77);
+      font-weight: normal;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    h5 {
+        
+        font-weight: normal;
+        color: black;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    p {
+      margin-top: 1px;
+      margin-bottom: 1px;
+    }
+    .youtube {
+      width: 100%;
+      height: 45vh;
+    }
+    .middle {
+      background: linear-gradient(#8D8B8B, #e6e6e6);
+
+    }
+    .table-wrapper {
+      overflow-y: scroll;
+      width: 70%;
+      height: 100%;
+      margin-left: 10px;
+      /*display: block;
+      */
+    }
+    .remark-slide-content {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+    .remark-slide-content h1 {
+        font-size: 45px;
+    }
+    .remark-slide-content h2 {
+        font-size: 32px;
+    }
+    .remark-slide-content h3 {
+        font-size: 28px;
+    }
+    .remark-slide-content h4,h5 {
+        font-size: 22px;
+    }
+    img.hist {
+      width:55%;
+    }
+    h2.performance, h4.performance {
+      text-align:center;
+      margin-bottom: 25px;
+    }
+    div.performance {
+      padding-bottom:15px;
+      padding-top:15px; 
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+    
+    }
+    #stopwords {
+      background-image: url(figures/stopwords_cm.png); 
+    }
+    #stop_pro {
+      background-image: url(figures/stop_pro_cm.png);
+    }
+    #stop_pro_names {
+      background-image: url(figures/stop_pro_names_cm.png);
+    }
+    #sentiment_pos {
+      background-image: url(figures/sentiment_pos_cm.png); 
+    }
+    #sentiment_neg {
+      background-image: url(figures/sentiment_neg_cm.png); 
+    }
+    #sentiment_all {
+      background-image: url(figures/sentiment_all_cm.png); 
+    }
+    /* Chrome, Safari */
+    ::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+
+    }
+    ::-webkit-scrollbar-track-piece  {
+    background-color: white;
+    }
+    ::-webkit-scrollbar-thumb:vertical {
+    height: 5px;
+    border-radius: 15px;
+    background-color: black;
+}
+  </style>
+  <script>
+
+  </script>
+</head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# Research Design for Large Scale Text Analysis
+
+<br/>
+<br/>
+
+#### Matthew Lavin
+#### Clinical Assistant Professor of English
+#### Director of Digital Media Lab
+#### University of Pittsburgh
+#### March 2018
+
+---
+class: middle
+
+# What is Research Design, and How Does it Apply to Large Scale Text Analysis?
+
+- ### Sometimes referred to as experimental design 
+- ### Refers mainly to the 'basic architecture' of inquiry 
+- ### Ignatow and Mihalcea define it as a "sequence of decisions that allow theory, data, and research methods to interface in such ways as to maximize a project's ability to achieve its goals" (59)
+
+---
+class: middle
+
+# Common Phases of Research Design
+
+1. ### Choosing a topic
+2. ### Explore scholarly field and evidentiary archive
+3. ### Generate research question or problem
+4. ### Structure a qualitative or quantitative way of addressing the question
+5. ### Operationalize your method computationally
+6. ### Locate or create a corpus
+7. ### Execute the computation on the corpus
+8. ### Evaluate and interpret results
+
+???
+(not necessarily in this order)
+
+---
+class: middle
+
+# _An Example of Research Design_:
+
+# Research Question
+
+- ### Can machine learning predict the presumed gender of the book's author?
+
+- ### If so, how do gendered term features inform prior scholarship on readership at this time?
+
+
+???
+
+- #### If so, what are the superficial features that predict presumed gender?
+- #### What are the topical features that predict presumed gender?
+- #### What are the evaluative features that predict presumed gender?
+- #### What hypotheses or research questions can we form for large scale analysis of gender and book reviews?  
+- #### How might these hypotheses speak to prior scholarship on readership and gender at this time?
+
+
+---
+class: middle
+
+# _An Example of Research Design_:
+
+# Corpus Development
+<br/>
+
+- ### <em>The New York Times Book Review</em>
+- ### Picked a Year: 1905
+- ### Approximately 4,000 articles
+- ### Approximately 1,000 book reviews
+- ### Genders of reviewed work's author tagged "assumed male," "assumed female," "multi," or "unknown"
+- ### Assumed means assumed by the reviewer, not me
+
+???
+
+  - #### Gold data 
+  - #### Metadata taken from <em>The New York Times</em> API
+  - #### After hand-coding categories of content, selected approximately 1,000 book reviews
+  - #### Each review focuses on a single book
+  - #### Genders of reviewed work's author tagged "assumed male," "assumed female," "multi," or "unknown"
+  - #### Coding reflects review's subjectivity, not objective gender or sex of reviewed author
+  - #### Reviews are often anonymous
+  - #### Not feasible to code genders of book reviewers
+
+---
+class: middle
+
+# _An Example of Research Design_:
+
+# Methods
+
+- ### Computational Text Processing
+ 
+- ### Machine Learning to Predict Labeled Gender
+
+- ### Shuffe and Repeat to Score Accuracy of Predictions
+
+- ### Feature Selection to Isolate Meaningful Terms
+
+- ### Hopefully Scale Up
+
+???
+ - #### OCR on NYT book reviews for all Labeled "assumed male" and "assumed female
+ - #### NLP to normalize text and lemmatize
+ - #### TF-IDF expressed in vector space
+ - #### Randomized partition to training and test with 200 test reviews
+ - #### Logistic regression (supervised, binary model) and evaluate accuracy
+ - #### Reshuffle training and test and repeat 999 more times, save results
+ - #### Do all above steps using six feature selection methods
+
+---
+class: middle
+
+# Exploring Text Data with TF-IDF
+
+- ### Term frequency is word count divided by document length
+ - ### The most frequent words tend to be same for all documents (the, be, to, of, and, a)
+- ### TF-IDF is Term Frequency - Inverse Document Frequency 
+ - ### Frequency is dvided by the term's frequency in all documents
+ - ### Shows you terms that are uncharacteristically common in a document
+
+---
+class: middle
+
+# When is TF-IDF a Good Choice?
+
+- ### Lots of text representing a common topic
+- ### Birdseye view of dinstinct words
+- ### Less computationally complex than other summarizing algorithms
+- ### Less computationally expensive than LDA, MMF, etc (i.e. faster to run)
+- ### Less sensitive to context than topic models or word embeddings
+
+---
+class: middle
+
+# Activity: TF-IDF with book reviews
+
+### The Github repo folder labelled "keywords" has 10 csv files in it. Each file is a list of the top 20 TF-IDF scores for a book review. Each review has the term _garden_ in that top 20 list, but the other items on the list vary greatly. In small groups (3-4 people) look at the data files and formulate a hypothesis about any patterns or trends that seem apparent. Try generating your own question that TF-IDF lists could help you explore. 
+
+### If you have time, take a look at the original book reviews. They are in the 'pdfs' folder, and each pdf filename matches a filename from the "keywords" folder.
+
+
+---
+class: middle
+
+# Works Cited
+
+- #### Bourdieu, Pierre. <em>The Field of Cultural Production: Essays on Art and Literature.</em> Translated by Randal Johnson. New York: Columbia UP, 1993.
+
+- #### Bourdieu, Pierre. <em>The Rules of Art: Genesis and Structure of the Literary Field.</em> Translated by Susan Emanuel. Palo Alto: Stanford UP, 1996.
+
+- #### Hochman, Barbara. <em>Getting at the Author: Reimagining Books and Reading in the Age of American Realism.</em> Amherst: U of Massachusetts P, 2009.
+
+- #### Radway, Janice A. <em>A Feeling for Books: The Book-Of-The-Month Club, Literary Taste, and Middle-Class Desire</em>. Chapel Hill: U of North Carolina P, 1999.
+
+- #### Rubin, Joan Shelley. <em>The Making of Middlebrow Culture</em>em>. Chapel Hill: U of North Carolina P, 1992.
+
+
+
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
